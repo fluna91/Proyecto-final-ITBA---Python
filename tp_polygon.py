@@ -149,7 +149,7 @@ def validar_fecha(fecha):
     return True
 
 def solicitar_datos_opcion1():
-    ticker = input('Ingresar ticker a pedir:')
+    ticker = input('Ingresar ticker a pedir:').upper()
 
     desde = input('Ingrese fecha de inicio en este formato año-mes-día:  ')
     #Si fecha desde es incorrecta validar_fecha(desde) devuelve una Excepcion
