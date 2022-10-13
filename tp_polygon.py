@@ -35,7 +35,7 @@ def graficar_ticker(dase_de_datos):
     titulo = "Evolución ticker " + ticker_elegido + " desde " + fecha_min + " al " + fecha_max
     plt.title(titulo)  ## Título de Gráfica
 
-    # plt.show() #Descomentar para mostrar en pantalla
+    plt.show() #mostrar en pantalla
     nombre_grafico = ticker_elegido + "-" + fecha_min + "-" + fecha_max + ".jpg"
 
 
