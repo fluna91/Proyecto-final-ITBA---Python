@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 def graficar_ticker(dase_de_datos):
     print("graficar_ticker")
-    texto_opcion_graficar_ticker = "Ingrese ticker a graficar"
+    texto_opcion_graficar_ticker = "Ingrese ticker a graficar:\n"
     ticker_elegido = input(texto_opcion_graficar_ticker).upper()
 
     con = sqlite3.connect(dase_de_datos)
@@ -67,7 +67,6 @@ def mostrar_opcion2_sub_opciones():
         raise ValueError("Número de opción incorrecta")
 
     return sub_opcion2
-
 
 def opcion2(dase_de_datos):
     opcion = mostrar_opcion2_sub_opciones()
@@ -177,27 +176,34 @@ def opcion1(dase_de_datos):
 # Función principal del programa
 #
 def menu_principal():
-    base_de_datos = "tp_polygon.db"
 
-    menu = "Seleccione una opción\n1. Actualización de datos\n2. Visualización de datos"
-    opcion = input(menu)
+    while True:
+        menu = "Seleccione una opción\n1. Actualización de datos\n2. Visualización de datos\n3. Salir\n"
+        base_de_datos = "tp_polygon.db"
+        opcion = input(menu)
 
-    if opcion == "1":
-        try:
-            opcion1(base_de_datos)
-        # except ValueError as e:
-        except Exception as e:
-            print(e)
-    elif opcion == "2":
-        try:
-            opcion2(base_de_datos)
-        # except ValueError as e:
-        except Exception as e:
-            print(e)
-    else:
-        print("Opción incorrecta")
+        if opcion == "1":
+            try:
+                opcion1(base_de_datos)
+            # except ValueError as e:
+            except Exception as e:
+                print(e)
+        elif opcion == "2":
+            try:
+                opcion2(base_de_datos)
+            # except ValueError as e:
+            except Exception as e:
+                print(e)
+        elif opcion == "3":
+            break
+        else:
+            print("Opción incorrecta")
+
+    print("Saliendo del menu")
 
 
 # Programa principal
 if __name__ == '__main__':
+
     menu_principal()
+    print("Hasta luego!")
