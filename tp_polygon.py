@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 def graficar_ticker(dase_de_datos):
-    print("graficar_ticker")
+    print("Representación gráfica de ticker")
     texto_opcion_graficar_ticker = "Ingrese ticker a graficar:\n"
     ticker_elegido = input(texto_opcion_graficar_ticker).upper()
 
@@ -58,8 +58,10 @@ def mostrar_resumen(dase_de_datos):
 
     con.close()
 
+    print("Resumen realizado para el ticker solicitado. Base de datos disponible.\n")
+
 def mostrar_opcion2_sub_opciones():
-    menu_opcion2 = "Visualización de datos - Seleccione una opción\n1. Resumén\n2. Grafico de Ticker"
+    menu_opcion2 = "Visualización de datos - Seleccione una opción\n1. Resumén\n2. Grafico de Ticker\n"
     sub_opcion2 = input(menu_opcion2)
 
     # Verificar que la opción es válida
@@ -169,7 +171,7 @@ def opcion1(dase_de_datos):
     resultados_api = llamar_api_polygon(ticker, timespan, desde, hasta)
 
     guardar_informacion(dase_de_datos, ticker, desde, hasta, resultados_api)
-    print("Operación exitosa")
+    print("Operación exitosa\n")
 
 
 #
